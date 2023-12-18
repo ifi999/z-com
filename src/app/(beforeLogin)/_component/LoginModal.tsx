@@ -2,13 +2,19 @@
 
 import {useState} from "react";
 import style from '@/app/(beforeLogin)/_component/login.module.css'
+import {useRouter} from "next/navigation";
 
 export default function LoginModal() {
   const [id, setId] = useState();
   const [password, setPassword] = useState();
   const [message, setMessage] = useState();
+  const router = useRouter();
+
   const onSubmit = () => {};
-  const onClickClose = () => {};
+  const onClickClose = () => {
+    router.back();
+    // TODO: 뒤로가기가 /home이 아니면 /home으로 보내기
+  };
 
   const onChangeId = () => {};
 
